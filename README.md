@@ -43,11 +43,10 @@ https://izza-faris.github.io/My-portfolio-/
 
 ## 📈 Current Learning Journey
 
-📚 Front-End Development  
+📚 Full Stuck Development  
 📚 JavaScript  
 📚 Web Design  
-📚 Python Basics  
-
+ 
 ⭐ If you like this project, feel free to give it a star!
 
 Made with ❤️ by Izza Faris
