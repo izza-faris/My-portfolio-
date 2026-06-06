@@ -234,75 +234,20 @@
 
 /* ─── PROJECTS responsive ─── */
 @media screen and (max-width: 1200px) {
-  .proj-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-  }
+  .proj-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
-
 @media screen and (max-width: 900px) {
-  #projects { padding: 80px 6%; }
-  .proj-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-  .proj-filter { gap: 8px; flex-wrap: wrap; }
-  .proj-filter-btn { padding: 8px 18px; font-size: 0.8rem; }
+  .proj-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .proj-filter { gap: 8px; }
+  .proj-browser-url { display: none; }
 }
-
 @media screen and (max-width: 600px) {
-  #projects { padding: 60px 5%; }
-
-  /* Filter buttons: wrap neatly, full touch targets */
-  .proj-filter {
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 36px;
-  }
-  .proj-filter-btn {
-    padding: 7px 16px;
-    font-size: 0.78rem;
-  }
-
-  /* Single column grid — no overflow, no clipping */
-  .proj-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 100%;
-  }
-
-  /* Card resets */
-  .proj-card {
-    width: 100%;
-    min-width: 0;
-    transform: none !important; /* kill translateY on hover that clips on mobile */
-  }
-
-  .proj-img-wrap { height: 185px; }
-
-  .proj-body { padding: 16px 16px 20px; }
-
-  .proj-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
-
-  .proj-title { font-size: 0.98rem; }
-  .proj-desc  { font-size: 0.82rem; line-height: 1.65; margin-bottom: 14px; }
-
-  .proj-tags span { font-size: 0.66rem; padding: 3px 9px; }
-
-  .proj-number { font-size: 3.8rem; }
-
-  /* Show overlay links inline below image instead of hover-only on mobile */
-  .proj-overlay { display: none; }
-  .proj-cta {
-    font-size: 0.84rem;
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #projects { padding: 50px 4%; }
-  .proj-grid { gap: 16px; }
-  .proj-img-wrap { height: 160px; }
-  .proj-body { padding: 14px 14px 18px; }
-  .proj-filter-btn { padding: 6px 13px; font-size: 0.74rem; }
+  .proj-grid { grid-template-columns: 1fr; gap: 16px; }
+  .proj-filter-btn { padding: 7px 16px; font-size: 0.78rem; }
+  .proj-browser-screen { height: 160px; }
+  .proj-body { padding: 16px 16px 18px; }
+  .proj-title { font-size: 0.97rem; }
+  .proj-desc  { font-size: 0.8rem; }
+  .proj-browser-bar { padding: 8px 10px; }
+  .dot { width: 8px; height: 8px; }
 }
