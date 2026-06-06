@@ -112,3 +112,54 @@ function handleFormSubmit(e) {
     document.getElementById("message").value = "";
   }, 1600);
 }
+
+// ── Project filter tabs ───────────────────────
+(function () {
+  const filterBtns = document.querySelectorAll(".proj-filter-btn");
+  const cards = document.querySelectorAll(".proj-card");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Active state
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+
+      cards.forEach((card) => {
+        const tags = card.dataset.tags || "";
+        const show = filter === "all" || tags.includes(filter);
+
+        if (show) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+})();
+
+// ── Project cards scroll reveal ───────────────
+const projCards = document.querySelectorAll(".proj-card");
+const projObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0) scale(1)";
+        }, i * 100);
+        projObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+projCards.forEach((card, i) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(36px) scale(0.97)";
+  card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+  projObserver.observe(card);
+});
