@@ -113,53 +113,95 @@ function handleFormSubmit(e) {
   }, 1600);
 }
 
-// ── Project filter tabs ───────────────────────
+// ── Project Slider ────────────────────────────
 (function () {
-  const filterBtns = document.querySelectorAll(".proj-filter-btn");
-  const cards = document.querySelectorAll(".proj-card");
+  const track     = document.getElementById('projTrack');
+  const prevBtn   = document.getElementById('projPrev');
+  const nextBtn   = document.getElementById('projNext');
+  const dotsEl    = document.getElementById('projDots');
+  if (!track) return;
 
+  let allSlides   = Array.from(track.querySelectorAll('.proj-slide'));
+  let visibleSlides = [...allSlides]; // filtered subset
+  let current     = 0;
+
+  function showSlide(index, direction) {
+    if (visibleSlides.length === 0) return;
+    index = Math.max(0, Math.min(index, visibleSlides.length - 1));
+
+    visibleSlides.forEach((s) => {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    });
+
+    const slide = visibleSlides[index];
+    slide.style.display = 'block';
+    slide.style.animation = 'none';
+    slide.offsetHeight; // reflow
+    slide.style.animation = direction === 'left'
+      ? 'slideInLeft 0.45s cubic-bezier(.23,1,.32,1)'
+      : 'slideIn 0.45s cubic-bezier(.23,1,.32,1)';
+    slide.classList.add('active');
+
+    current = index;
+    updateDots();
+    updateArrows();
+  }
+
+  function updateDots() {
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    visibleSlides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'proj-dot' + (i === current ? ' active' : '');
+      btn.setAttribute('aria-label', `Project ${i + 1}`);
+      btn.addEventListener('click', () => showSlide(i, i > current ? 'right' : 'left'));
+      dotsEl.appendChild(btn);
+    });
+  }
+
+  function updateArrows() {
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === visibleSlides.length - 1;
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => showSlide(current - 1, 'left'));
+  if (nextBtn) nextBtn.addEventListener('click', () => showSlide(current + 1, 'right'));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const section = document.getElementById('projects');
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    if (rect.top > window.innerHeight || rect.bottom < 0) return;
+    if (e.key === 'ArrowLeft') showSlide(current - 1, 'left');
+    if (e.key === 'ArrowRight') showSlide(current + 1, 'right');
+  });
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? showSlide(current + 1, 'right') : showSlide(current - 1, 'left');
+  });
+
+  // Filter tabs — reuse existing filter buttons
+  const filterBtns = document.querySelectorAll('.proj-filter-btn');
   filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // Active state
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
       const filter = btn.dataset.filter;
-
-      cards.forEach((card) => {
-        const tags = card.dataset.tags || "";
-        const show = filter === "all" || tags.includes(filter);
-
-        if (show) {
-          card.classList.remove("hidden");
-        } else {
-          card.classList.add("hidden");
-        }
+      visibleSlides = allSlides.filter((s) => {
+        return filter === 'all' || (s.dataset.tags || '').includes(filter);
       });
+      current = 0;
+      allSlides.forEach((s) => { s.classList.remove('active'); s.style.display = 'none'; });
+      showSlide(0, 'right');
     });
   });
+
+  // Init
+  showSlide(0, 'right');
 })();
-
-// ── Project cards scroll reveal ───────────────
-const projCards = document.querySelectorAll(".proj-card");
-const projObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0) scale(1)";
-        }, i * 100);
-        projObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-
-projCards.forEach((card, i) => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(36px) scale(0.97)";
-  card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  projObserver.observe(card);
-});

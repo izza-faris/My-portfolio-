@@ -883,35 +883,160 @@ footer {
   box-shadow: var(--glow-pink);
 }
 
-/* ── Grid ── */
-.proj-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+/* ── Slider Wrapper ── */
+.proj-slider-wrapper {
+  position: relative;
+  max-width: 1060px;
+  margin: 0 auto;
 }
 
-/* ── Card ── */
-.proj-card {
+/* ── Arrow buttons ── */
+.proj-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(13,17,23,0.92);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.proj-arrow:hover {
+  background: var(--grad-btn);
+  border-color: transparent;
+  color: white;
+  box-shadow: var(--glow-pink);
+  transform: translateY(-50%) scale(1.08);
+}
+.proj-arrow--prev { left: -24px; }
+.proj-arrow--next { right: -24px; }
+.proj-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+.proj-arrow:disabled:hover { background: rgba(13,17,23,0.92); border-color: var(--border); color: var(--text); box-shadow: none; transform: translateY(-50%) scale(1); }
+
+/* ── Track ── */
+.proj-slider-track {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+/* ── Slide ── */
+.proj-slide {
+  display: none;
+  animation: slideIn 0.45s cubic-bezier(.23,1,.32,1);
+}
+.proj-slide.active { display: block; }
+
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.proj-slide-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
   background: #0d1117;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(.23,1,.32,1);
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  min-height: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transition: border-color 0.3s;
 }
-.proj-card:hover {
-  transform: translateY(-12px);
-  border-color: var(--border-h);
-  box-shadow: var(--glow-pink), 0 28px 64px rgba(0,0,0,0.5);
+.proj-slide-inner:hover { border-color: var(--border-h); }
+
+/* Preview side */
+.proj-slide-preview {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
-.proj-card.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.94) translateY(20px);
-  display: none;
+.proj-slide-preview .proj-browser {
+  flex: 1;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
 }
+.proj-slide-preview .proj-browser-bar {
+  border-radius: 0;
+}
+.proj-slide-preview .proj-browser-screen {
+  flex: 1;
+  height: auto;
+  min-height: 340px;
+}
+
+/* Info side */
+.proj-slide-info {
+  padding: 38px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.proj-slide-number {
+  font-family: var(--font-head);
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.18;
+  margin-bottom: 14px;
+  letter-spacing: -2px;
+}
+
+.proj-slide-info .proj-meta { margin-bottom: 12px; }
+.proj-slide-info .proj-title { font-size: 1.35rem; margin-bottom: 14px; }
+.proj-slide-info .proj-desc { margin-bottom: 28px; font-size: 0.88rem; line-height: 1.75; }
+
+.proj-slide-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.proj-slide-btns .btn { padding: 10px 20px; font-size: 0.85rem; }
+
+/* ── Dot indicators ── */
+.proj-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+.proj-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.18);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.proj-dot.active {
+  width: 28px;
+  border-radius: 5px;
+  background: var(--grad-btn);
+  box-shadow: var(--glow-pink);
+}
+.proj-dot:hover:not(.active) { background: rgba(255,255,255,0.35); }
+
+/* Legacy card class still referenced in JS hidden logic */
+.proj-card.hidden { display: none; }
 
 /* ── Browser chrome frame ── */
 .proj-browser {

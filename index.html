@@ -208,210 +208,361 @@
         <button class="proj-filter-btn" data-filter="responsive">Responsive</button>
       </div>
 
-      <div class="proj-grid">
+      <!-- Slider Wrapper -->
+      <div class="proj-slider-wrapper">
+        <button class="proj-arrow proj-arrow--prev" id="projPrev" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="proj-arrow proj-arrow--next" id="projNext" aria-label="Next project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
 
-        <!-- Card 1 — Personal Portfolio -->
-        <div class="proj-card" data-tags="html-css responsive">
-          <div class="proj-browser">
-            <div class="proj-browser-bar">
-              <div class="proj-browser-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="proj-browser-url">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                izza-portfolio.github.app
-              </div>
-            </div>
-            <div class="proj-browser-screen proj-color-1">
-              <img src="./assets/portfolio.png" alt="Personal Portfolio" class="proj-img" onerror="this.style.display='none'"/>
-              <div class="proj-screen-placeholder">
-                <div class="proj-screen-nav">
-                  <div class="proj-screen-logo">IF<span>.</span></div>
-                  <div class="proj-screen-links">
-                    <span></span><span></span><span></span><span></span>
+        <div class="proj-slider-track" id="projTrack">
+
+          <!-- Slide 1 -->
+          <div class="proj-slide" data-tags="html-css responsive">
+            <div class="proj-slide-inner">
+              <div class="proj-slide-preview">
+                <div class="proj-browser">
+                  <div class="proj-browser-bar">
+                    <div class="proj-browser-dots">
+                      <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                    </div>
+                    <div class="proj-browser-url">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      izza-portfolio.github.app
+                    </div>
+                  </div>
+                  <div class="proj-browser-screen proj-color-1">
+                    <img src="./assets/portfolio.png" alt="Personal Portfolio" class="proj-img" onerror="this.style.display='none'"/>
+                    <div class="proj-screen-placeholder">
+                      <div class="proj-screen-nav">
+                        <div class="proj-screen-logo">IF<span>.</span></div>
+                        <div class="proj-screen-links"><span></span><span></span><span></span><span></span></div>
+                      </div>
+                      <div class="proj-screen-hero">
+                        <div class="proj-screen-line big"></div>
+                        <div class="proj-screen-line big accent"></div>
+                        <div class="proj-screen-line small"></div>
+                        <div class="proj-screen-btns">
+                          <div class="proj-screen-btn filled"></div>
+                          <div class="proj-screen-btn outline"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="proj-overlay">
+                      <div class="proj-overlay-links">
+                        <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn">
+                          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code
+                        </a>
+                        <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="proj-screen-hero">
-                  <div class="proj-screen-line big"></div>
-                  <div class="proj-screen-line big accent"></div>
-                  <div class="proj-screen-line small"></div>
-                  <div class="proj-screen-line small"></div>
-                  <div class="proj-screen-btns">
-                    <div class="proj-screen-btn filled"></div>
-                    <div class="proj-screen-btn outline"></div>
-                  </div>
-                </div>
               </div>
-              <div class="proj-overlay">
-                <div class="proj-overlay-links">
-                  <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    Code
+              <div class="proj-slide-info">
+                <div class="proj-slide-number">01</div>
+                <div class="proj-meta">
+                  <span class="proj-year">2026 May</span>
+                  <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+                </div>
+                <h3 class="proj-title">Personal Portfolio</h3>
+                <p class="proj-desc">A modern developer portfolio built with clean HTML, CSS and JavaScript. Features animated sections, smooth scroll navigation, skill bars, a project showcase, and a contact form — all fully responsive across every screen size.</p>
+                <div class="proj-slide-btns">
+                  <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Live Demo
                   </a>
-                  <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    Live
+                  <a href="https://github.com/izza-faris" target="_blank" class="btn btn-outline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View Code
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="proj-body">
-            <div class="proj-meta">
-              <span class="proj-year">2026 May</span>
-              <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>responsive</span></div>
+
+          <!-- Slide 2 -->
+          <div class="proj-slide" data-tags="html-css javascript">
+            <div class="proj-slide-inner">
+              <div class="proj-slide-preview">
+                <div class="proj-browser">
+                  <div class="proj-browser-bar">
+                    <div class="proj-browser-dots">
+                      <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                    </div>
+                    <div class="proj-browser-url">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      ai-tools-izza.github.io
+                    </div>
+                  </div>
+                  <div class="proj-browser-screen proj-color-2">
+                    <div class="proj-screen-placeholder">
+                      <div class="proj-screen-todo-header">
+                        <div class="proj-screen-line big" style="width:55%;margin:0 auto 6px;"></div>
+                        <div class="proj-screen-todo-input">
+                          <div class="proj-screen-input-bar"></div>
+                          <div class="proj-screen-add-btn"></div>
+                        </div>
+                        <div class="proj-screen-todo-filters">
+                          <span class="active-filter"></span><span></span><span></span>
+                        </div>
+                      </div>
+                      <div class="proj-screen-todo-items">
+                        <div class="proj-screen-todo-item done"><span class="todo-check">✓</span><div class="proj-screen-line small" style="flex:1;"></div><div class="proj-screen-todo-actions"><span></span><span></span></div></div>
+                        <div class="proj-screen-todo-item"><span class="todo-check empty"></span><div class="proj-screen-line small" style="flex:1;"></div><div class="proj-screen-todo-actions"><span></span><span></span></div></div>
+                        <div class="proj-screen-todo-item"><span class="todo-check empty"></span><div class="proj-screen-line small" style="flex:1;opacity:0.5;"></div><div class="proj-screen-todo-actions"><span></span><span></span></div></div>
+                      </div>
+                    </div>
+                    <div class="proj-overlay">
+                      <div class="proj-overlay-links">
+                        <a href="https://izza-faris.github.io/AI-Tools-Showcase-Website/" target="_blank" class="proj-overlay-btn">
+                          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code
+                        </a>
+                        <a href="https://izza-faris.github.io/AI-Tools-Showcase-Website/" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="proj-slide-info">
+                <div class="proj-slide-number">02</div>
+                <div class="proj-meta">
+                  <span class="proj-year">2026 June</span>
+                  <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span></div>
+                </div>
+                <h3 class="proj-title">AI Tools Showcase Website</h3>
+                <p class="proj-desc">A curated showcase of powerful AI tools designed to boost productivity and creativity. Features category filtering, animated cards, and clean responsive layouts built with Bootstrap 5 and vanilla JavaScript.</p>
+                <div class="proj-slide-btns">
+                  <a href="https://izza-faris.github.io/AI-Tools-Showcase-Website/" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/izza-faris" target="_blank" class="btn btn-outline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View Code
+                  </a>
+                </div>
+              </div>
             </div>
-            <h3 class="proj-title">Personal Portfolio</h3>
-            <p class="proj-desc">Welcome to my portfolio! I am a passionate and dedicated web developer with a strong interest in creating modern, responsive, and user-friendly websites. I enjoy turning ideas into functional digital experiences through clean code and thoughtful design. This portfolio showcases a collection of projects I have built while developing my skills in web development, including HTML, CSS, JavaScript, Bootstrap, and various AI-powered tools. Each project reflects my commitment to continuous learning, problem-solving, and improving my technical abilities. As I continue my journey in technology, I am excited to explore new challenges, expand my knowledge, and contribute to innovative projects that make a positive impact. 🚀✨</p>
-            <a href="https://github.com/izza-faris" target="_blank" class="proj-cta">
-              View Project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
           </div>
+
+          <!-- Slide 3 -->
+          <div class="proj-slide" data-tags="responsive html-css">
+            <div class="proj-slide-inner">
+              <div class="proj-slide-preview">
+                <div class="proj-browser">
+                  <div class="proj-browser-bar">
+                    <div class="proj-browser-dots">
+                      <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                    </div>
+                    <div class="proj-browser-url">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      landing-page-izza.github.io
+                    </div>
+                  </div>
+                  <div class="proj-browser-screen proj-color-3">
+                    <div class="proj-screen-placeholder">
+                      <div class="proj-screen-nav">
+                        <div class="proj-screen-logo" style="color:#f8c940;">LP<span style="color:#f72585;">.</span></div>
+                        <div class="proj-screen-links"><span></span><span></span><span></span><span></span></div>
+                      </div>
+                      <div class="proj-screen-hero" style="text-align:center;padding-top:18px;">
+                        <div class="proj-screen-line big" style="margin:0 auto 5px;width:70%;"></div>
+                        <div class="proj-screen-line big" style="margin:0 auto 5px;width:50%;opacity:0.6;"></div>
+                        <div class="proj-screen-line small" style="margin:0 auto 12px;width:65%;"></div>
+                        <div class="proj-screen-btns" style="justify-content:center;"><div class="proj-screen-btn filled"></div></div>
+                      </div>
+                      <div class="proj-screen-cards-row">
+                        <div class="proj-screen-mini-card"></div>
+                        <div class="proj-screen-mini-card"></div>
+                        <div class="proj-screen-mini-card"></div>
+                      </div>
+                    </div>
+                    <div class="proj-overlay">
+                      <div class="proj-overlay-links">
+                        <a href="https://github.com/izza-faris" target="_blank" class="proj-overlay-btn">
+                          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code
+                        </a>
+                        <a href="#" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="proj-slide-info">
+                <div class="proj-slide-number">03</div>
+                <div class="proj-meta">
+                  <span class="proj-year">2026</span>
+                  <div class="proj-tags"><span>Bootstrap</span><span>CSS</span><span>Responsive</span></div>
+                </div>
+                <h3 class="proj-title">Responsive Landing Page</h3>
+                <p class="proj-desc">A modern, mobile-first landing page template built with Bootstrap 5. Features smooth scrolling, animated hero sections, a sticky responsive navbar, and feature cards — optimised for all devices.</p>
+                <div class="proj-slide-btns">
+                  <a href="#" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/izza-faris" target="_blank" class="btn btn-outline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="proj-slide" data-tags="html-css responsive">
+            <div class="proj-slide-inner">
+              <div class="proj-slide-preview">
+                <div class="proj-browser">
+                  <div class="proj-browser-bar">
+                    <div class="proj-browser-dots">
+                      <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                    </div>
+                    <div class="proj-browser-url">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      izza-portfolio.github.app
+                    </div>
+                  </div>
+                  <div class="proj-browser-screen proj-color-1">
+                    <img src="./assets/portfolio.png" alt="Personal Portfolio" class="proj-img" onerror="this.style.display='none'"/>
+                    <div class="proj-screen-placeholder">
+                      <div class="proj-screen-nav">
+                        <div class="proj-screen-logo">IF<span>.</span></div>
+                        <div class="proj-screen-links"><span></span><span></span><span></span><span></span></div>
+                      </div>
+                      <div class="proj-screen-hero">
+                        <div class="proj-screen-line big"></div>
+                        <div class="proj-screen-line big accent"></div>
+                        <div class="proj-screen-line small"></div>
+                        <div class="proj-screen-btns">
+                          <div class="proj-screen-btn filled"></div>
+                          <div class="proj-screen-btn outline"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="proj-overlay">
+                      <div class="proj-overlay-links">
+                        <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn">
+                          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code
+                        </a>
+                        <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="proj-slide-info">
+                <div class="proj-slide-number">01</div>
+                <div class="proj-meta">
+                  <span class="proj-year">2026 May</span>
+                  <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+                </div>
+                <h3 class="proj-title">Personal Portfolio</h3>
+                <p class="proj-desc">A modern developer portfolio built with clean HTML, CSS and JavaScript. Features animated sections, smooth scroll navigation, skill bars, a project showcase, and a contact form — all fully responsive across every screen size.</p>
+                <div class="proj-slide-btns">
+                  <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/izza-faris" target="_blank" class="btn btn-outline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="proj-slide" data-tags="html-css responsive">
+            <div class="proj-slide-inner">
+              <div class="proj-slide-preview">
+                <div class="proj-browser">
+                  <div class="proj-browser-bar">
+                    <div class="proj-browser-dots">
+                      <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                    </div>
+                    <div class="proj-browser-url">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      izza-portfolio.github.app
+                    </div>
+                  </div>
+                  <div class="proj-browser-screen proj-color-1">
+                    <img src="./assets/portfolio.png" alt="Personal Portfolio" class="proj-img" onerror="this.style.display='none'"/>
+                    <div class="proj-screen-placeholder">
+                      <div class="proj-screen-nav">
+                        <div class="proj-screen-logo">IF<span>.</span></div>
+                        <div class="proj-screen-links"><span></span><span></span><span></span><span></span></div>
+                      </div>
+                      <div class="proj-screen-hero">
+                        <div class="proj-screen-line big"></div>
+                        <div class="proj-screen-line big accent"></div>
+                        <div class="proj-screen-line small"></div>
+                        <div class="proj-screen-btns">
+                          <div class="proj-screen-btn filled"></div>
+                          <div class="proj-screen-btn outline"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="proj-overlay">
+                      <div class="proj-overlay-links">
+                        <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn">
+                          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Code
+                        </a>
+                        <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="proj-slide-info">
+                <div class="proj-slide-number">01</div>
+                <div class="proj-meta">
+                  <span class="proj-year">2026 May</span>
+                  <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+                </div>
+                <h3 class="proj-title">Personal Portfolio</h3>
+                <p class="proj-desc">A modern developer portfolio built with clean HTML, CSS and JavaScript. Features animated sections, smooth scroll navigation, skill bars, a project showcase, and a contact form — all fully responsive across every screen size.</p>
+                <div class="proj-slide-btns">
+                  <a href="https://izza-faris.github.io/My-portfolio-/" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Live Demo
+                  </a>
+                  <a href="https://github.com/izza-faris" target="_blank" class="btn btn-outline">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /proj-slider-track -->
+
+        <!-- Dot Indicators -->
+        <div class="proj-dots" id="projDots">
+          <button class="proj-dot active" data-index="0" aria-label="Project 1"></button>
+          <button class="proj-dot" data-index="1" aria-label="Project 2"></button>
+          <button class="proj-dot" data-index="2" aria-label="Project 3"></button>
+          <button class="proj-dot" data-index="2" aria-label="Project 4"></button>
+          <button class="proj-dot" data-index="2" aria-label="Project 5"></button>
         </div>
 
-        <!-- Card 2 — AI Tools Showcase -->
-        <div class="proj-card" data-tags="html-css javascript">
-          <div class="proj-browser">
-            <div class="proj-browser-bar">
-              <div class="proj-browser-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="proj-browser-url">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                AI Tools Showcase - izza.github.io
-              </div>
-            </div>
-            <div class="proj-browser-screen proj-color-2">
-              <img src="./assets/Ai hub.png" alt="Ai hub" class="proj-img" onerror="this.style.display='none'"/>
-              <div class="proj-screen-placeholder">
-                <div class="proj-screen-todo-header">
-                  <div class="proj-screen-line big" style="width:55%;margin:0 auto 6px;"></div>
-                  <div class="proj-screen-todo-input">
-                    <div class="proj-screen-input-bar"></div>
-                    <div class="proj-screen-add-btn"></div>
-                  </div>
-                  <div class="proj-screen-todo-filters">
-                    <span class="active-filter"></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <div class="proj-screen-todo-items">
-                  <div class="proj-screen-todo-item done">
-                    <span class="todo-check">✓</span>
-                    <div class="proj-screen-line small" style="flex:1;"></div>
-                    <div class="proj-screen-todo-actions"><span></span><span></span></div>
-                  </div>
-                  <div class="proj-screen-todo-item">
-                    <span class="todo-check empty"></span>
-                    <div class="proj-screen-line small" style="flex:1;"></div>
-                    <div class="proj-screen-todo-actions"><span></span><span></span></div>
-                  </div>
-                  <div class="proj-screen-todo-item">
-                    <span class="todo-check empty"></span>
-                    <div class="proj-screen-line small" style="flex:1;opacity:0.5;"></div>
-                    <div class="proj-screen-todo-actions"><span></span><span></span></div>
-                  </div>
-                </div>
-              </div>
-              <div class="proj-overlay">
-                <div class="proj-overlay-links">
-                  <a href="https://izza-faris.github.io/AI-Tools-Showcase-Website/" target="_blank" class="proj-overlay-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    Code
-                  </a>
-                  <a href="https://izza-faris.github.io/AI-Tools-Showcase-Website/" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    Live
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-meta">
-              <span class="proj-year">2026 June</span>
-              <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>bootstrap</span></div>
-            </div>
-            <h3 class="proj-title">AI Tools Showcase Website</h3>
-            <p class="proj-desc">Explore a collection of powerful AI tools designed to boost productivity, creativity, and innovation. From content generation and coding assistance to image creation and research, these tools help individuals and businesses work smarter and achieve more in the digital age.</p>
-            <a href="https://github.com/izza-faris" target="_blank" class="proj-cta">
-              View Project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 3 — Responsive Landing Page -->
-        <div class="proj-card" data-tags="responsive html-css">
-          <div class="proj-browser">
-            <div class="proj-browser-bar">
-              <div class="proj-browser-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="proj-browser-url">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                landing-page-izza.github.io
-              </div>
-            </div>
-            <div class="proj-browser-screen proj-color-3">
-              <div class="proj-screen-placeholder">
-                <div class="proj-screen-nav">
-                  <div class="proj-screen-logo" style="color:#f8c940;">LP<span style="color:#f72585;">.</span></div>
-                  <div class="proj-screen-links">
-                    <span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
-                <div class="proj-screen-hero" style="text-align:center;padding-top:18px;">
-                  <div class="proj-screen-line big" style="margin:0 auto 5px;width:70%;"></div>
-                  <div class="proj-screen-line big" style="margin:0 auto 5px;width:50%;opacity:0.6;"></div>
-                  <div class="proj-screen-line small" style="margin:0 auto 12px;width:65%;"></div>
-                  <div class="proj-screen-btns" style="justify-content:center;">
-                    <div class="proj-screen-btn filled"></div>
-                  </div>
-                </div>
-                <div class="proj-screen-cards-row">
-                  <div class="proj-screen-mini-card"></div>
-                  <div class="proj-screen-mini-card"></div>
-                  <div class="proj-screen-mini-card"></div>
-                </div>
-              </div>
-              <div class="proj-overlay">
-                <div class="proj-overlay-links">
-                  <a href="https://github.com/izza-faris" target="_blank" class="proj-overlay-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    Code
-                  </a>
-                  <a href="#" target="_blank" class="proj-overlay-btn proj-overlay-btn--live">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    Live
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-meta">
-              <span class="proj-year">2026</span>
-              <div class="proj-tags"><span>Bootstrap</span><span>CSS</span><span>Responsive</span></div>
-            </div>
-            <h3 class="proj-title">Responsive Landing Page</h3>
-            <p class="proj-desc">A modern, mobile-first landing page template built with Bootstrap 5. Features smooth scrolling, animated sections, and a fully responsive navbar.</p>
-            <a href="https://github.com/izza-faris" target="_blank" class="proj-cta">
-              View Project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
+      </div><!-- /proj-slider-wrapper -->
     </section>
 
     <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
@@ -566,7 +717,7 @@
           <li><a href="#certification">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <p class="footer-copy">© 2025 Izza Faris · Built with passion ♥</p>
+        <p class="footer-copy">© 2026 Izza Faris · Built with passion ♥</p>
       </div>
     </footer>
 
