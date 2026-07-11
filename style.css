@@ -664,6 +664,25 @@ section { padding: 100px 8%; min-height: 100vh; }
 .project-link-demo:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(247,37,133,0.55); }
 
 /* ═══════════════════════════════════════
+   JOB SIMULATIONS (cyan/gold themed variant)
+═══════════════════════════════════════ */
+#simulation { background: rgba(255,255,255,0.005); }
+
+#simulation .cert-badge {
+  background: var(--grad-cyan);
+  box-shadow: var(--glow-cyan);
+}
+#simulation .project-card:hover {
+  border-color: rgba(76,201,240,0.4);
+  box-shadow: var(--glow-cyan), 0 24px 60px rgba(0,0,0,0.45);
+}
+#simulation .project-tags span {
+  color: var(--gold);
+  background: rgba(248,201,64,0.1);
+  border: 1px solid rgba(248,201,64,0.2);
+}
+
+/* ═══════════════════════════════════════
    CONTACT  ← COMPLETELY REDESIGNED
 ═══════════════════════════════════════ */
 #contact {

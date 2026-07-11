@@ -57,7 +57,7 @@ document.head.appendChild(visibleStyle);
 
 // ── Active nav highlight ─────────────────────
 const navLinks = document.querySelectorAll("#desktop-nav .nav-links a:not(.nav-cta)");
-const sectionIds = ["about", "experience", "certification", "contact"];
+const sectionIds = ["about", "experience", "certification", "simulation", "contact"];
 
 window.addEventListener("scroll", () => {
   let current = "";
