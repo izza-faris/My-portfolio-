@@ -286,8 +286,10 @@
   .sim-arrow--prev { left: 2px; }
   .sim-arrow--next { right: 2px; }
   .sim-slide .project-card { margin: 0 44px; }
+  #simulation .project-img-wrap { height: 240px; }
 }
 @media screen and (max-width: 420px) {
   .sim-arrow { width: 34px; height: 34px; }
   .sim-slide .project-card { margin: 0 38px; }
+  #simulation .project-img-wrap { height: 200px; }
 }

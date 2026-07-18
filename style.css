@@ -753,6 +753,21 @@ section { padding: 100px 8%; min-height: 100vh; }
   border: 1px solid rgba(248,201,64,0.2);
 }
 
+/* Taller preview + object-fit: contain so the full certificate
+   shows instead of getting cropped in half like project photos do */
+#simulation .project-img-wrap {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d1117;
+}
+#simulation .project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 /* ── Job Simulations slider: one card at a time, sliding, auto-running ── */
 .sim-slider-wrapper {
   position: relative;
