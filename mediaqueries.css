@@ -109,6 +109,15 @@
   /* ── Certs ── */
   .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
 
+  /* ── Achievements ── */
+  .achievement-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+  .achievement-stars { justify-content: center; }
+
   /* ── Contact ── */
   .contact-layout { grid-template-columns: 1fr; gap: 28px; }
   .contact-intro  { max-width: 100%; }
@@ -184,6 +193,12 @@
   .project-title { font-size: 0.97rem; }
   .project-para  { font-size: 0.8rem; }
   .project-tags span { font-size: 0.65rem; }
+
+  /* ── Achievements ── */
+  .achievement-card { padding: 26px 18px; gap: 18px; }
+  .achievement-badge-icon { width: 110px; height: 110px; }
+  .achievement-title { font-size: 1.1rem; }
+  .achievement-para  { font-size: 0.82rem; }
 
   /* ── Contact ── */
   #contact { padding: 60px 5% 60px; }
