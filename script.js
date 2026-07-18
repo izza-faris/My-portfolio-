@@ -55,6 +55,98 @@ const visibleStyle = document.createElement("style");
 visibleStyle.textContent = `section.visible { opacity: 1 !important; transform: none !important; }`;
 document.head.appendChild(visibleStyle);
 
+// ── Job Simulations Slider (auto-running, one card at a time) ────
+(function () {
+  const track   = document.getElementById('simTrack');
+  const prevBtn = document.getElementById('simPrev');
+  const nextBtn = document.getElementById('simNext');
+  const dotsEl  = document.getElementById('simDots');
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll('.sim-slide'));
+  let current = 0;
+  let autoplayTimer = null;
+
+  function showSlide(index, direction) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    slides.forEach((s) => { s.classList.remove('active', 'dir-left'); });
+
+    const slide = slides[index];
+    slide.classList.add('active');
+    if (direction === 'left') slide.classList.add('dir-left');
+
+    current = index;
+    updateDots();
+  }
+
+  function updateDots() {
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'sim-dot' + (i === current ? ' active' : '');
+      btn.setAttribute('aria-label', `Job simulation ${i + 1}`);
+      btn.addEventListener('click', () => {
+        showSlide(i, i > current ? 'right' : 'left');
+        restartAutoplay();
+      });
+      dotsEl.appendChild(btn);
+    });
+  }
+
+  function nextSlide() { showSlide(current + 1, 'right'); }
+  function prevSlide() { showSlide(current - 1, 'left'); }
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(nextSlide, 3200);
+  }
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
+  }
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); restartAutoplay(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); restartAutoplay(); });
+
+  // Pause while the user is looking at / hovering the slider
+  const wrapper = document.querySelector('.sim-slider-wrapper');
+  if (wrapper) {
+    wrapper.addEventListener('mouseenter', stopAutoplay);
+    wrapper.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); restartAutoplay(); }
+  });
+
+  // Only auto-run once the section actually scrolls into view
+  const simSection = document.getElementById('simulation');
+  const simAutoplayObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAutoplay();
+        } else {
+          stopAutoplay();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  if (simSection) simAutoplayObserver.observe(simSection);
+
+  showSlide(0, 'right');
+})();
+
 // ── Active nav highlight ─────────────────────
 const navLinks = document.querySelectorAll("#desktop-nav .nav-links a:not(.nav-cta)");
 const sectionIds = ["about", "experience", "certification", "achievements", "simulation", "contact"];
